@@ -1,0 +1,345 @@
+
+// Dashboard
+.dashboard{
+    background-image: url(../images/main_bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    .main_block{
+        padding-top: 55px;
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .main_left{
+        flex: 0 0 auto;
+        width: 19.7%;
+        border-radius: 20px 20px 0px 0px;
+        background: linear-gradient(107deg, rgba(0, 0, 0, 0.10) 0%, rgba(29, 29, 29, 0.10) 18.75%, rgba(128, 128, 128, 0.10) 81.25%, rgba(255, 255, 255, 0.10) 100%);
+        box-shadow: 0px 0px 55px 0px rgba(0, 0, 0, 0.50);
+        backdrop-filter: blur(5px);
+    }
+    .main_left_img{
+        img{
+            object-fit: cover;
+            object-position: center;
+            width: 100%;
+            margin-bottom: -5px;
+        }
+    }
+    .main_left_top{
+        padding: 80px 0px 0 0px;
+        margin-bottom: 105px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .main_right{
+        flex: 0 0 auto;
+        width: 78%;
+    }
+    .connect_btn{
+        border-radius: 7.537px;
+        background: linear-gradient(90deg, #C5A059 0%, #DEB750 29.52%, #E6D48A 59.72%, #F6DD75 97.29%, #B3914C 128.82%);
+        box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.25);
+        padding: 16px 20px 10px 20px;
+        color: #000;
+        font-size: 28.263px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin-bottom: 18px;
+    }
+    .dashboard_detail{
+        padding-left: 7px;
+        border-left: 1px solid #000;
+        opacity: .5;
+        font-family: 'Commodus-reg';
+        .dash_title{
+            color: #000;
+            font-size: 28.263px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            margin-bottom: 18px;
+            &.no_active{
+                opacity: 0.5;
+                font-family: 'Commodus';
+            }
+        }
+        .reedem_title{
+            color: #000;
+            font-size: 28.263px;
+            font-style: normal;
+            font-weight: 400;
+            opacity: 0.5;
+            line-height: .8;
+            &.active{
+                opacity: 1;
+            }
+        }
+    }
+    .hero_block{
+        margin-left: 20px;
+        border-radius: 20px;
+        background: linear-gradient(107deg, rgba(0, 0, 0, 0.10) 0%, rgba(29, 29, 29, 0.10) 18.75%, rgba(128, 128, 128, 0.10) 81.25%, rgba(255, 255, 255, 0.10) 100%);
+        box-shadow: 0px 0px 55px 0px rgba(0, 0, 0, 0.50);
+        backdrop-filter: blur(5px);
+        padding: 100px 74px 25px 30px;
+        margin-bottom: 20px;
+    }
+    .detail_block{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-bottom: 25px;
+    }
+    .detail_item{
+        flex: 0 0 auto;
+        width: 23.5%;
+        border-radius: 20px;
+        background: linear-gradient(107deg, rgba(0, 0, 0, 0.10) 0%, rgba(29, 29, 29, 0.10) 18.75%, rgba(128, 128, 128, 0.10) 81.25%, rgba(255, 255, 255, 0.10) 100%);
+        box-shadow: 0px 0px 55px 0px rgba(0, 0, 0, 0.50);
+        backdrop-filter: blur(5px);
+        padding: 43px 25px 45px 25px;
+        height: 205px;
+    }
+    .detail_title{
+        background: linear-gradient(89deg, #C5A059 0.32%, #DEB750 28.88%, #E6D48A 51.72%, #F6DD75 76.64%, #C1A05D 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 35px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 98.9%;
+        text-align: center;
+        margin-bottom: 10px;
+        font-family: 'Commodus-reg';
+        .small{
+            display: block;
+            text-align: center;
+            font-size: 22px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 105%;
+        }
+    }
+    .item_bottom{
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        justify-content: center;
+    }
+    .item_number{
+        color: #FFF;
+        text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.40);
+        font-size: 33px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    .black_block{
+        border-radius: 20px;
+        background: #313131;
+        box-shadow: 0px 0px 55px 0px rgba(0, 0, 0, 0.50);
+        backdrop-filter: blur(5px);
+        height: 630px;
+        width: 100%;
+    }
+    .left_footer{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding-right: 30px;
+        padding-bottom: 25px;
+    }
+    .footer_text{
+        display: flex;
+        align-items: center;
+        gap: 33px;
+        p{
+            color: #FFF;
+            font-size: 19px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+    }
+    .footer_name{
+        color: #FFF;
+        font-family: Arial, sans-serif;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    .footer_social{
+        display: flex;
+        align-items: center;
+        gap: 28px;
+    }
+    .social_item{
+        img{
+            width: 30px;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+}
+
+// mint html
+#mint_section{
+
+    .main_right#mint{
+        .money_block{
+            border-radius: 20px;
+            background: linear-gradient(107deg, rgba(0, 0, 0, 0.10) 0%, rgba(29, 29, 29, 0.10) 18.75%, rgba(128, 128, 128, 0.10) 81.25%, rgba(255, 255, 255, 0.10) 100%);
+            box-shadow: 0px 0px 55px 0px rgba(0, 0, 0, 0.50);
+            backdrop-filter: blur(5px);
+            padding: 104px 107px 104px 107px;
+            margin-left: 20px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        .money_item{
+            width: 44.4%;
+            flex: 0 0 auto;
+            border-radius: 20px;
+            background: linear-gradient(107deg, rgba(0, 0, 0, 0.10) 0%, rgba(29, 29, 29, 0.10) 18.75%, rgba(128, 128, 128, 0.10) 81.25%, rgba(255, 255, 255, 0.10) 100%);
+            box-shadow: 0px 0px 55px 0px rgba(0, 0, 0, 0.50);
+            backdrop-filter: blur(5px);
+        }
+        .money_top{
+            padding: 45px 0 22px 0;
+            text-align: center;
+            margin-bottom: 30px;
+            border-radius: 20px;
+            background: linear-gradient(107deg, rgba(0, 0, 0, 0.10) 0%, rgba(29, 29, 29, 0.10) 18.75%, rgba(128, 128, 128, 0.10) 81.25%, rgba(255, 255, 255, 0.10) 100%);
+            box-shadow: 0px 0px 55px 0px rgba(0, 0, 0, 0.50);
+            .money_name{
+                font-family: 'Commodus-alt';
+                text-align: center;
+                text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.50);
+                font-size: 85px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 98.9%; /* 84.065px */
+                background: linear-gradient(89deg, #C5A059 0.32%, #DEB750 28.88%, #E6D48A 51.72%, #F6DD75 76.64%, #C1A05D 100%);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+        .money_wrapper{
+            border-radius: 20px;
+            background: linear-gradient(107deg, rgba(0, 0, 0, 0.01) 0%, rgba(29, 29, 29, 0.01) 18.75%, rgba(128, 128, 128, 0.01) 81.25%, rgba(255, 255, 255, 0.01) 100%);
+            box-shadow: 0px 0px 55px 0px rgba(0, 0, 0, 0.50);
+            backdrop-filter: blur(5px);
+            padding: 11px 32px;
+            margin-bottom: 20px;
+        }
+        .money_body{
+            border-radius: 20px;
+            background: rgba(35, 35, 35, 0.90);
+            box-shadow: 0px 0px 55px 0px rgba(0, 0, 0, 0.50);
+            backdrop-filter: blur(5px); 
+            padding: 20px;
+            position: relative;
+        }
+        .top_deposit{
+            color: #FFF;
+            text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.40);
+            font-size: 13px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            font-family: 'Commodus-reg';
+        }
+        .top_money_types{
+            border-radius: 20px;
+            background: linear-gradient(289deg, rgba(0, 0, 0, 0.05) -100%, rgba(29, 29, 29, 0.05) -62.5%, rgba(128, 128, 128, 0.05) 62.5%, rgba(255, 255, 255, 0.05) 100%);
+            box-shadow: 0px 0px 55px 0px rgba(0, 0, 0, 0.50);
+            padding: 0px 15px 0px 3px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 190px;
+            position: absolute;
+            z-index: 3;
+            height: 36px;
+            &.top{
+                right: 20px;
+                top: 20px;
+            }
+            &.bottom{
+                right: 20px;
+                bottom: 20px;
+            }
+            .money_icon{
+                img{
+                    margin-top: 5px;
+                }
+            }
+        }
+        .money_body_top{
+            margin-bottom: 45px;
+        }
+        .money_icon_name{
+            color: #FFF;
+            text-align: center;
+            text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.40);
+            font-size: 13px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            font-family: 'Commodus-reg';
+        }
+        .money_count{
+            color: #FFF;
+            text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.40);
+            font-size: 87px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+        .bottom_arrow{
+            margin: 5px 0 1px 0;
+            text-align: center;
+            img{
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+    }
+    .money_button{
+        border-radius: 20px;
+        background: rgba(35, 35, 35, 0.80);
+        box-shadow: 0px 0px 55px 0px rgba(0, 0, 0, 0.50);
+        backdrop-filter: blur(5px);
+        padding: 18px 17px;
+        a{
+            font-family: 'Commodus-reg';
+            color: #FFF;
+            text-align: center;
+            text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.40);
+            font-size: 35px;
+            font-style: normal;
+            padding: 31px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 400;
+            line-height: normal;
+            border-radius: 20px;
+            background: linear-gradient(180deg, #F4DC7A 0%, rgba(244, 220, 122, 0.00) 100%);
+            box-shadow: 0px 0px 55px 0px rgba(0, 0, 0, 0.50);
+            backdrop-filter: blur(5px);
+        }
+    }
+}

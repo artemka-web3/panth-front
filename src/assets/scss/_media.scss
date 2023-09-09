@@ -1,0 +1,183 @@
+.container{
+    padding: 0;
+    margin: 0 auto;
+    max-width: 1680px;
+}
+@media (max-width:1700px){
+    .container{
+        max-width: 1340px;
+    }
+    .dashboard .hero_block{
+        padding: 60px 30px 25px 30px;
+    }
+    .dashboard .black_block{
+        height: 500px;
+    }
+    .dashboard .detail_item {
+        padding: 43px 0px 45px 0px;
+    }
+    .dashboard .detail_title{
+        font-size: 32px;
+    }
+    .dashboard .item_number {
+        font-size: 28px;
+    }
+    .dashboard .main_left_top {
+        margin-bottom: 75px;
+    }
+    #mint_section .main_right#mint .money_item {
+        width: 47.4%;
+    }
+}
+@media (max-width:1400px){
+    .container{
+        max-width: 1140px;
+    }
+    .dashboard .hero_block{
+        margin-left: 0;
+    }
+    .dashboard .detail_title {
+        font-size: 30px;
+    }
+    #mint_section .main_right#mint .top_money_types.top {
+        top: 41px;
+    }
+    .dashboard .item_bottom {
+        gap: 0;
+    }
+    .dashboard .item_number {
+        font-size: 27px;
+    }
+    .dashboard .main_left_top {
+        padding: 55px 0px 0 0px;
+    }
+    #mint_section .main_right#mint .money_block {
+        padding: 60px 50px 50px 50px;
+        margin-left: 0px;
+    }
+    #mint_section .main_right#mint .money_top .money_name {
+        font-size: 76px;
+    }
+}
+@media (max-width:1200px){
+    .container{
+        max-width: 960px;
+    }
+    .dashboard .main_block{
+        flex-direction: column;
+        gap: 20px;
+    }
+    #mint_section .main_right#mint .money_top {
+        padding: 32px 0 12px 0;
+    }
+  
+    .dashboard .main_left {
+        width: 33.7%;
+    }
+    .dashboard .main_right {
+        width: 100%;
+    }
+    .dashboard .detail_title .small {
+        font-size: 20px;
+    }
+    .dashboard .main_left_top {
+        margin-bottom: 0;
+    }
+}
+@media (max-width:992px){
+    .container{
+        max-width: 720px;
+    }
+    .dashboard .main_left {
+        width: 45.7%;
+    }
+    .dashboard .hero_block {
+        padding: 50px 25px 25px 25px;
+    }
+    .dashboard .detail_block{
+        gap: 20px;
+    }
+    #mint_section .main_right#mint .money_top .money_name {
+        font-size: 58px;
+    }
+    #mint_section .money_button a {
+        font-size: 23px;
+    }
+    #mint_section .main_right#mint .top_money_types{
+        position: static;
+    }
+    #mint_section .main_right#mint .money_body_top {
+        margin-bottom: 15px;
+    }
+    #mint_section .main_right#mint .top_deposit {
+        margin-bottom: 15px;
+    }
+    .dashboard .detail_item {
+        width: 48.5%;
+    }
+    
+}
+@media (max-width:768px){
+    .container{
+        max-width: 540px;
+    }
+    .dashboard .main_left {
+        width: 55.7%;
+    }
+    .dashboard .detail_item {
+        width: 47.5%;
+    }
+    .dashboard .left_footer{
+        gap: 20px 0;
+    }
+    #mint_section .main_right#mint .money_block{
+        margin-left: 0;
+        gap: 20px 0;
+        justify-content: center;
+    }
+    #mint_section .main_right#mint .money_item {
+        width: 81.4%;
+    }
+}
+@media (max-width:576px){
+    .container{
+        padding: 15px ;
+        max-width: 100%;
+    }
+    .dashboard .main_left {
+        width: 64.7%;
+    }
+    .dashboard .detail_item {
+        width: 80.5%;
+    }
+    .dashboard .detail_block {
+        justify-content: center;
+    }
+    #mint_section .main_right#mint .money_item {
+        width: 100%;
+    }
+}
+@media (max-width:480px){
+    .dashboard .main_left {
+        width: 100%;
+    }
+    .dashboard .detail_item {
+        width: 93.5%;
+    }
+    .dashboard .black_block {
+        height: 400px;
+    }
+    .dashboard .left_footer {
+        justify-content: center;
+    }
+    #mint_section .main_right#mint .money_block {
+        padding: 40px 20px 40px 20px;
+    }
+    #mint_section .main_right#mint .money_wrapper {
+        padding: 11px 20px;
+    }
+    .dashboard .left_footer{
+        padding-right: 0;
+        gap: 20px;
+    }
+}
