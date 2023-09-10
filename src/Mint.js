@@ -70,7 +70,7 @@ const Mint = () => {
           const valueInWei = utils.parseEther(newValue); // Convert to Wei
           const val = await pantheonContract.getMintPantheon(valueInWei);
           console.log(val);
-          setYouReceivePantheon(val);
+          setYouReceivePantheon(utils.formatEther(val));
         } catch (error) {
           console.error(error);
         }
@@ -82,7 +82,7 @@ const Mint = () => {
         try {
           const valueInWei = utils.parseEther(newValue); // Convert to Wei
           const val = await pantheonContract.getRedeemPantheon(valueInWei);
-          console.log(parseFloat(val));
+          console.log(val);
           setYouReceiveETH(utils.formatEther(val)); // Format as Ether
         } catch (error) {
           console.error(error);
@@ -93,14 +93,14 @@ const Mint = () => {
     const mint = async () => {
         try {
             // First, approve the contract to spend the desired amount of ETH
-            const amountInETH = youDepositETH; // Replace with the amount in ETH you want to deposit
-            const amountInWei = utils.parseEther(amountInETH.toString());
-            const approvalTx = await pantheonContract.approve(pantheonContractAddress, amountInWei);
+            //const amountInETH = youReceivePantheon; // Replace with the amount in ETH you want to deposit
+            //const amountInWei = utils.parseEther(amountInETH.toString());
+            const approvalTx = await pantheonContract.approve(pantheonContractAddress, utils.parseEther(youReceivePantheon));
             await approvalTx.wait();
         
             // Then, call the mint function on the contract
             const tx = await pantheonContract.mint(account, {
-              value: amountInWei,
+              value: utils.parseEther(youReceivePantheon),
             });
             await tx.wait();
         
@@ -115,9 +115,9 @@ const Mint = () => {
             // Call the redeem function on the contract
             const amountInETH = youBurnPantheon; // Replace with the amount in ETH you want to deposit
             const amountInWei = utils.parseEther(amountInETH.toString());
-            const approvalTx = await pantheonContract.approve(pantheonContractAddress, amountInWei);
+            const approvalTx = await pantheonContract.approve(pantheonContractAddress, utils.parseEther(youBurnPantheon));
             await approvalTx.wait();
-            const tx = await pantheonContract.connect(signer).redeem(youBurnPantheon);
+            const tx = await pantheonContract.connect(signer).redeem(utils.parseEther(youBurnPantheon));
             await tx.wait();
         
             console.log("Redeem transaction successful");
