@@ -110,14 +110,14 @@ const Mint = () => {
           }
     }
 
-    const redeem = async () => {
+    const redeemFunc = async () => {
         try {
             // Call the redeem function on the contract
             const amountInETH = youBurnPantheon; // Replace with the amount in ETH you want to deposit
             const amountInWei = utils.parseEther(amountInETH.toString());
             const approvalTx = await pantheonContract.approve(pantheonContractAddress, amountInWei);
             await approvalTx.wait();
-            const tx = await pantheonContract.redeem(youBurnPantheon).connect(signer).send();
+            const tx = await pantheonContract.connect(signer).redeem(youBurnPantheon);
             await tx.wait();
         
             console.log("Redeem transaction successful");
@@ -251,7 +251,7 @@ const Mint = () => {
                                         </div>
                                     </div>
                                     <div className="money_button">
-                                        <a onClick={redeem}>Redeem</a>
+                                        <a onClick={redeemFunc}>Redeem</a>
                                     </div>
                                 </div>
                             </div>
