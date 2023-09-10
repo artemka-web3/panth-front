@@ -32,16 +32,9 @@ const App = () => {
 
   const getBalance = async()=>{
     try {
-      const maxCharacters = 8;
-      let balance = await pantheonContract.balanceOf(pantheonContractAddress);
-      balance = parseInt(balance).toString()
-      if (balance.length > maxCharacters) {
-        balance = parseInt(balance.slice(0, maxCharacters)).toLocaleString("en-EN") + "..."
-        setPantheonBalance(balance)
-
-      } else {
-        setPantheonBalance((parseInt(balance).toLocaleString("en-EN")))
-      }
+      let balance = await pantheonContract.getBalance();
+      balance = utils.formatEther(balance).toString()
+      setPantheonBalance(balance.slice(0, 8) + "...")("en-EN")
 
     } catch (error) {
       console.error('Error:', error);
@@ -50,16 +43,9 @@ const App = () => {
   }
   const totalETH = async()=>{
     try {
-      const maxCharacters = 8;
       let total_eth = await pantheonContract.totalEth();
-      total_eth = parseInt(total_eth).toString()
-      if (total_eth.length > maxCharacters) {
-        total_eth = parseInt(total_eth.slice(0, maxCharacters)).toLocaleString("en-EN") + "..."
-        setTotalEthValue(total_eth)
-
-      } else {
-        setTotalEthValue((parseInt(total_eth).toLocaleString("en-EN")))
-      }
+      total_eth = utils.formatEther(total_eth).toString()
+      setTotalEthValue(total_eth.slice(0, 8) + "...")("en-EN")
 
     } catch (error) {
       console.error('Error:', error);

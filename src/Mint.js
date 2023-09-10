@@ -64,50 +64,62 @@ const Mint = () => {
     //         (YouDepositETH -> считать pantheon) |
     const depositHandlerETH = async (event) => {
         const newValue = event.target.value;
-        setYouDepositETH(newValue)
-        try{
-            let val = await pantheonContract.getMintPantheon(utils.parseUnits(newValue))
-            console.log(parseFloat(val))
-            setYouReceivePantheon(parseFloat(val))
-        } catch(error){
-            console.log(error)
+        setYouDepositETH(newValue);
+        
+        try {
+          const valueInWei = utils.parseEther(newValue); // Convert to Wei
+          const val = await pantheonContract.getMintPantheon(valueInWei);
+          console.log(val);
+          setYouReceivePantheon(val);
+        } catch (error) {
+          console.error(error);
         }
-    } 
-    const burnHandlerPantheon = async (event) => {
+      };
+      const burnHandlerPantheon = async (event) => {
         const newValue = event.target.value;
-        setYouBurnPantheon(newValue)
-        try{
-            let val = await pantheonContract.getRedeemPantheon(utils.parseUnits(newValue))
-            console.log(parseFloat(val))
-            setYouReceiveETH(parseFloat(val))
-        } catch(error){
-            console.log(error)
+        setYouBurnPantheon(newValue);
+        
+        try {
+          const valueInWei = utils.parseEther(newValue); // Convert to Wei
+          const val = await pantheonContract.getRedeemPantheon(valueInWei);
+          console.log(parseFloat(val));
+          setYouReceiveETH(utils.formatEther(val)); // Format as Ether
+        } catch (error) {
+          console.error(error);
         }
-    }
+      };
 
 
     const mint = async () => {
-        try{
+        try {
+            // First, approve the contract to spend the desired amount of ETH
+            const amountInETH = youDepositETH; // Replace with the amount in ETH you want to deposit
+            const amountInWei = utils.parseEther(amountInETH.toString());
+            const approvalTx = await pantheonContract.approve(pantheonContractAddress, amountInWei);
+            await approvalTx.wait();
+        
+            // Then, call the mint function on the contract
             const tx = await pantheonContract.mint(account, {
-                value: utils.parseEther(youReceivePantheon), // Replace with the amount in Ether you want to send
+              value: amountInWei,
             });
-            await tx.wait()
-            console.log("Trx successfull")
-        } catch(error){
-            alert(error)
-        }
+            await tx.wait();
+        
+            console.log("Mint transaction successful");
+          } catch (error) {
+            alert(error);
+          }
     }
 
     const redeem = async () => {
-        try{
-            const tx = await pantheonContract.redeem(account, {
-                value: utils.parseEther(youReceiveETH), // Replace with the amount in Ether you want to send
-            });
-            await tx.wait()
-            console.log("Sell Trx Succesfull")
-        } catch(error){
-            alert(error)
-        }
+        try {
+            // Call the redeem function on the contract
+            const tx = await pantheonContract.redeem(youBurnPantheon);
+            await tx.wait();
+        
+            console.log("Redeem transaction successful");
+          } catch (error) {
+            alert(error);
+          }
     }
 
   
