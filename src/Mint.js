@@ -52,6 +52,7 @@ const Mint = () => {
 
 		let tempSigner = tempProvider.getSigner();
 		setSigner(tempSigner);
+        console.log(tempSigner)
 
 		let tempContract = new Contract(pantheonContractAddress, pantheonContractAbi, tempSigner);
 		setPantheonContract(tempContract);	
@@ -139,6 +140,7 @@ const Mint = () => {
           setConnected(true);
           setConnBtnText("Connected")
           setPantheonContract(contract)
+          updateEthers()
         } else {
           console.error("No web3 provider found");
         }
