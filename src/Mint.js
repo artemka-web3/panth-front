@@ -116,7 +116,8 @@ const Mint = () => {
             const amountInETH = youBurnPantheon; // Replace with the amount in ETH you want to deposit
             const amountInWei = utils.parseEther(amountInETH.toString());
             const approvalTx = await pantheonContract.approve(pantheonContractAddress, amountInWei);
-            const tx = await pantheonContract.connect(signer).redeem(youBurnPantheon);
+            await approvalTx.wait();
+            const tx = await pantheonContract.redeem(youBurnPantheon).connect(signer).send();
             await tx.wait();
         
             console.log("Redeem transaction successful");
