@@ -32,7 +32,7 @@ const App = () => {
 
   const getBalance = async()=>{
     try {
-      let balance = await pantheonContract.getBalance();
+      let balance = await pantheonContract.balanceOf(account);
       balance = utils.formatEther(balance).toString()
       setPantheonBalance(balance.slice(0, 8) + "...")("en-EN")
 
