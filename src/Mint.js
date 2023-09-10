@@ -157,7 +157,7 @@ const Mint = () => {
                     <div className="main_block">
                         <div className="main_left">
                             <div className="main_left_top">
-                                <a onClick={connectWallet} href="#" className="connect_btn">
+                                <a onClick={connectWallet} className="connect_btn">
                                     {connBtnText}
                                 </a>
                                 <div className="dashboard_detail">
