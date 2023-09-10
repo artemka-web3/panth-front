@@ -15,7 +15,7 @@ import pantheonContractAbi from './ethereum/jay.json'
 import { Contract, providers, utils, Signer } from "ethers";
 
 const Mint = () => {
-    let pantheonContractAddress = "0x78458C02E567C1f9f6F51939A18d8FDd2BED647E"
+    let pantheonContractAddress = "0x0106B688463c8ee0F3bc5b15b64Ce33FDE72362c"
 
     const [pantheonContract, setPantheonContract] = useState(null)
     const [provider, setProvider] = useState(null)
@@ -210,7 +210,7 @@ const Mint = () => {
                                         </div>
                                     </div>
                                     <div className="money_button">
-                                        <a onClick={mint} href="">Mint</a>
+                                        <a onClick={mint}>Mint</a>
                                     </div>
                                 </div>
                                 <div className="money_item">
@@ -247,7 +247,7 @@ const Mint = () => {
                                         </div>
                                     </div>
                                     <div className="money_button">
-                                        <a onClick={redeem} href="">Redeem</a>
+                                        <a onClick={redeem}>Redeem</a>
                                     </div>
                                 </div>
                             </div>

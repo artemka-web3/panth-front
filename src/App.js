@@ -19,7 +19,7 @@ import { Contract, providers, utils, Signer } from "ethers";
 
 const App = () => {
 
-  let pantheonContractAddress = "0x78458C02E567C1f9f6F51939A18d8FDd2BED647E"
+  let pantheonContractAddress = "0x0106B688463c8ee0F3bc5b15b64Ce33FDE72362c"
 
   const [pantheonContract, setPantheonContract] = useState(null)
   const [connected, setConnected] = useState(false);
