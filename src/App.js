@@ -187,9 +187,7 @@ const redeemFunc = async () => {
                             <a onClick={connectWallet} className="connect_btn">
                               {connBtnText}
                             </a>
-                            <div class="dashboard_detail">
-                                <p class="dash_title">Dashboard</p>
-                            </div>
+                            
                         </div>
                         <div class="main_left_img">
                             <img src={main_left_image} alt=""/>
