@@ -237,7 +237,7 @@ const redeemFunc = async () => {
                                     </h3>
                                     <div class="item_bottom">
                                         <div class="item_icon">
-                                            <img src={eth_icon} alt=""/>
+                                            <img src={detail_2} alt=""/>
                                         </div>
                                         <p class="item_number">12,340.332..</p>
                                     </div>
