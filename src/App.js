@@ -192,7 +192,6 @@ const redeemFunc = async () => {
                             </a>
                             <div class="dashboard_detail">
                                 <p class="dash_title">Dashboard</p>
-                                <p class="reedem_title">Mint - <br></br> redeem</p>
                             </div>
                         </div>
                         <div class="main_left_img">
