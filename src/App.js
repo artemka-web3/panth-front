@@ -189,7 +189,6 @@ const redeemFunc = async () => {
                             </a>
                             <div class="dashboard_detail">
                                 <p class="dash_title">Dashboard</p>
-                                <p class="reedem_title">Mint - <br></br> redeem</p>
                             </div>
                         </div>
                         <div class="main_left_img">
@@ -225,7 +224,7 @@ const redeemFunc = async () => {
 
                                 <div class="detail_item">
                                     <h3 class="detail_title">
-                                        LP APR: <br></br> <span class="small">(Base Swap)</span> 
+                                        LP APR: <br></br> <span class="small">(Equalizer)</span> 
                                     </h3>
                                     <div class="item_bottom">
                                         <p class="item_number">246.14%</p>
@@ -238,7 +237,7 @@ const redeemFunc = async () => {
                                     </h3>
                                     <div class="item_bottom">
                                         <div class="item_icon">
-                                            <img src={detail_1} alt=""/>
+                                            <img src={eth_icon} alt=""/>
                                         </div>
                                         <p class="item_number">12,340.332..</p>
                                     </div>
