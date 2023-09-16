@@ -149,8 +149,6 @@ const mint = async () => {
         // First, approve the contract to spend the desired amount of ETH
         //const amountInETH = youReceivePantheon; // Replace with the amount in ETH you want to deposit
         //const amountInWei = utils.parseEther(amountInETH.toString());
-        const approvalTx = await pantheonContract.approve(pantheonContractAddress, utils.parseEther(youReceivePantheon));
-        await approvalTx.wait();
     
         // Then, call the mint function on the contract
         const tx = await pantheonContract.mint(account, {
@@ -169,6 +167,8 @@ const redeemFunc = async () => {
         // Call the redeem function on the contract
         const amountInETH = youBurnPantheon; // Replace with the amount in ETH you want to deposit
         const amountInWei = utils.parseEther(amountInETH.toString());
+        const approvalTx = await pantheonContract.approve(pantheonContractAddress, utils.parseEther(youBurnPantheon));
+        await approvalTx.wait();
         const tx = await pantheonContract.connect(signer).redeem(utils.parseEther(youBurnPantheon));
         await tx.wait();
     
