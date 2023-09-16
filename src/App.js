@@ -70,6 +70,7 @@ function App() {
         setPantheonContract(contract)
         setAccount(connectedAddress);
         setConnected(true);
+        setSigner(signer);
         setConnBtnText("Connected")
       } else {
         console.error("No web3 provider found");
@@ -89,7 +90,6 @@ function App() {
 
 		let tempSigner = tempProvider.getSigner();
 		setSigner(tempSigner);
-        console.log(tempSigner)
 
 		let tempContract = new Contract(pantheonContractAddress, pantheonContractAbi, tempSigner);
 		setPantheonContract(tempContract);	
@@ -121,7 +121,6 @@ function App() {
     try {
       const valueInWei = utils.parseEther(newValue); // Convert to Wei
       const val = await pantheonContract.getMintPantheon(valueInWei);
-      console.log(val);
       setYouReceivePantheon(utils.formatEther(val));
     } catch (error) {
       console.error(error);
@@ -142,7 +141,7 @@ function App() {
   };
 
 
-  const mint = async () => {
+const mint = async () => {
     try {
         // First, approve the contract to spend the desired amount of ETH
         //const amountInETH = youReceivePantheon; // Replace with the amount in ETH you want to deposit
@@ -190,6 +189,7 @@ const redeemFunc = async () => {
                             </a>
                             <div class="dashboard_detail">
                                 <p class="dash_title">Dashboard</p>
+                                <p class="reedem_title">Mint - <br></br> redeem</p>
                             </div>
                         </div>
                         <div class="main_left_img">
