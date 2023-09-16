@@ -71,8 +71,6 @@ function App() {
         setAccount(connectedAddress);
         setConnected(true);
         setConnBtnText("Connected")
-        console.log(account);
-        console.log(connected);
       } else {
         console.error("No web3 provider found");
       }
@@ -144,15 +142,17 @@ function App() {
   };
 
 
-const mint = async () => {
+  const mint = async () => {
     try {
         // First, approve the contract to spend the desired amount of ETH
         //const amountInETH = youReceivePantheon; // Replace with the amount in ETH you want to deposit
         //const amountInWei = utils.parseEther(amountInETH.toString());
+        // const approvalTx = await pantheonContract.approve(pantheonContractAddress, utils.parseEther(youReceivePantheon));
+        // await approvalTx.wait();
     
         // Then, call the mint function on the contract
         const tx = await pantheonContract.mint(account, {
-          value: utils.parseEther(youReceivePantheon),
+          value: utils.parseEther(youDepositETH),
         });
         await tx.wait();
     
