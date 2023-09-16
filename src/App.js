@@ -187,9 +187,9 @@ const redeemFunc = async () => {
                             <a onClick={connectWallet} className="connect_btn">
                               {connBtnText}
                             </a>
-                            <div class="dashboard_detail">
+                            {/* <div class="dashboard_detail">
                                 <p class="dash_title">Documents</p>
-                            </div>
+                            </div> */}
                         </div>
                         <div class="main_left_img">
                             <img src={main_left_image} alt=""/>
@@ -327,7 +327,7 @@ const redeemFunc = async () => {
                         </div>
                         <div class="left_footer">
                             <div class="footer_text">
-                                <p></p>
+                                <p>docs</p>
                                 <p></p>
                             </div>
                             <p class="footer_name">© Pantheon Ecosystem</p>
