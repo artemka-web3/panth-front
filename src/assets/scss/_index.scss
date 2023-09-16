@@ -191,6 +191,147 @@
 }
 
 // mint html
+.money_item{
+    width: 48%;
+    flex: 0 0 auto;
+    border-radius: 20px;
+    background: linear-gradient(107deg, rgba(0, 0, 0, 0.10) 0%, rgba(29, 29, 29, 0.10) 18.75%, rgba(128, 128, 128, 0.10) 81.25%, rgba(255, 255, 255, 0.10) 100%);
+    box-shadow: 0px 0px 55px 0px rgba(0, 0, 0, 0.50);
+    backdrop-filter: blur(5px);
+}
+.money_top{
+    padding: 45px 0 22px 0;
+    text-align: center;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    background: linear-gradient(107deg, rgba(0, 0, 0, 0.10) 0%, rgba(29, 29, 29, 0.10) 18.75%, rgba(128, 128, 128, 0.10) 81.25%, rgba(255, 255, 255, 0.10) 100%);
+    box-shadow: 0px 0px 55px 0px rgba(0, 0, 0, 0.50);
+    .money_name{
+        font-family: 'Commodus-alt';
+        text-align: center;
+        text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.50);
+        font-size: 85px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 98.9%; /* 84.065px */
+        background: linear-gradient(89deg, #C5A059 0.32%, #DEB750 28.88%, #E6D48A 51.72%, #F6DD75 76.64%, #C1A05D 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+.money_wrapper{
+    border-radius: 20px;
+    background: linear-gradient(107deg, rgba(0, 0, 0, 0.01) 0%, rgba(29, 29, 29, 0.01) 18.75%, rgba(128, 128, 128, 0.01) 81.25%, rgba(255, 255, 255, 0.01) 100%);
+    box-shadow: 0px 0px 55px 0px rgba(0, 0, 0, 0.50);
+    backdrop-filter: blur(5px);
+    padding: 11px 32px;
+    margin-bottom: 20px;
+}
+.money_body{
+    border-radius: 20px;
+    background: rgba(35, 35, 35, 0.90);
+    box-shadow: 0px 0px 55px 0px rgba(0, 0, 0, 0.50);
+    backdrop-filter: blur(5px); 
+    padding: 20px;
+    position: relative;
+}
+.top_deposit{
+    color: #FFF;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.40);
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    font-family: 'Commodus-reg';
+}
+.top_money_types{
+    border-radius: 20px;
+    background: linear-gradient(289deg, rgba(0, 0, 0, 0.05) -100%, rgba(29, 29, 29, 0.05) -62.5%, rgba(128, 128, 128, 0.05) 62.5%, rgba(255, 255, 255, 0.05) 100%);
+    box-shadow: 0px 0px 55px 0px rgba(0, 0, 0, 0.50);
+    padding: 0px 15px 0px 3px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 190px;
+    position: absolute;
+    z-index: 3;
+    height: 36px;
+    &.top{
+        right: 20px;
+        top: 20px;
+    }
+    &.bottom{
+        right: 20px;
+        bottom: 20px;
+    }
+    .money_icon{
+        img{
+            margin-top: 5px;
+        }
+    }
+}
+.money_body_top{
+    margin-bottom: 45px;
+}
+.money_icon_name{
+    color: #FFF;
+    text-align: center;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.40);
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    font-family: 'Commodus-reg';
+}
+.money_count{
+    color: #FFF;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.40);
+    font-size: 87px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.bottom_arrow{
+    margin: 5px 0 1px 0;
+    text-align: center;
+    img{
+        object-fit: cover;
+        object-position: center;
+    }
+}
+.money_button{
+    border-radius: 20px;
+    background: rgba(35, 35, 35, 0.80);
+    box-shadow: 0px 0px 55px 0px rgba(0, 0, 0, 0.50);
+    backdrop-filter: blur(5px);
+    padding: 18px 17px;
+    a{
+        font-family: 'Commodus-reg';
+        color: #FFF;
+        text-align: center;
+        text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.40);
+        font-size: 35px;
+        font-style: normal;
+        padding: 31px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 400;
+        line-height: normal;
+        border-radius: 20px;
+        background: linear-gradient(180deg, #F4DC7A 0%, rgba(244, 220, 122, 0.00) 100%);
+        box-shadow: 0px 0px 55px 0px rgba(0, 0, 0, 0.50);
+        backdrop-filter: blur(5px);
+    }
+}
+.money_block{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
 #mint_section{
 
     .main_right#mint{
@@ -206,140 +347,6 @@
             justify-content: space-between;
             flex-wrap: wrap;
             margin-bottom: 20px;
-        }
-        .money_item{
-            width: 44.4%;
-            flex: 0 0 auto;
-            border-radius: 20px;
-            background: linear-gradient(107deg, rgba(0, 0, 0, 0.10) 0%, rgba(29, 29, 29, 0.10) 18.75%, rgba(128, 128, 128, 0.10) 81.25%, rgba(255, 255, 255, 0.10) 100%);
-            box-shadow: 0px 0px 55px 0px rgba(0, 0, 0, 0.50);
-            backdrop-filter: blur(5px);
-        }
-        .money_top{
-            padding: 45px 0 22px 0;
-            text-align: center;
-            margin-bottom: 30px;
-            border-radius: 20px;
-            background: linear-gradient(107deg, rgba(0, 0, 0, 0.10) 0%, rgba(29, 29, 29, 0.10) 18.75%, rgba(128, 128, 128, 0.10) 81.25%, rgba(255, 255, 255, 0.10) 100%);
-            box-shadow: 0px 0px 55px 0px rgba(0, 0, 0, 0.50);
-            .money_name{
-                font-family: 'Commodus-alt';
-                text-align: center;
-                text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.50);
-                font-size: 85px;
-                font-style: normal;
-                font-weight: 400;
-                line-height: 98.9%; /* 84.065px */
-                background: linear-gradient(89deg, #C5A059 0.32%, #DEB750 28.88%, #E6D48A 51.72%, #F6DD75 76.64%, #C1A05D 100%);
-                background-clip: text;
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-            }
-        }
-        .money_wrapper{
-            border-radius: 20px;
-            background: linear-gradient(107deg, rgba(0, 0, 0, 0.01) 0%, rgba(29, 29, 29, 0.01) 18.75%, rgba(128, 128, 128, 0.01) 81.25%, rgba(255, 255, 255, 0.01) 100%);
-            box-shadow: 0px 0px 55px 0px rgba(0, 0, 0, 0.50);
-            backdrop-filter: blur(5px);
-            padding: 11px 32px;
-            margin-bottom: 20px;
-        }
-        .money_body{
-            border-radius: 20px;
-            background: rgba(35, 35, 35, 0.90);
-            box-shadow: 0px 0px 55px 0px rgba(0, 0, 0, 0.50);
-            backdrop-filter: blur(5px); 
-            padding: 20px;
-            position: relative;
-        }
-        .top_deposit{
-            color: #FFF;
-            text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.40);
-            font-size: 13px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: normal;
-            font-family: 'Commodus-reg';
-        }
-        .top_money_types{
-            border-radius: 20px;
-            background: linear-gradient(289deg, rgba(0, 0, 0, 0.05) -100%, rgba(29, 29, 29, 0.05) -62.5%, rgba(128, 128, 128, 0.05) 62.5%, rgba(255, 255, 255, 0.05) 100%);
-            box-shadow: 0px 0px 55px 0px rgba(0, 0, 0, 0.50);
-            padding: 0px 15px 0px 3px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 190px;
-            position: absolute;
-            z-index: 3;
-            height: 36px;
-            &.top{
-                right: 20px;
-                top: 20px;
-            }
-            &.bottom{
-                right: 20px;
-                bottom: 20px;
-            }
-            .money_icon{
-                img{
-                    margin-top: 5px;
-                }
-            }
-        }
-        .money_body_top{
-            margin-bottom: 45px;
-        }
-        .money_icon_name{
-            color: #FFF;
-            text-align: center;
-            text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.40);
-            font-size: 13px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: normal;
-            font-family: 'Commodus-reg';
-        }
-        .money_count{
-            color: #FFF;
-            text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.40);
-            font-size: 87px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: normal;
-        }
-        .bottom_arrow{
-            margin: 5px 0 1px 0;
-            text-align: center;
-            img{
-                object-fit: cover;
-                object-position: center;
-            }
-        }
-    }
-    .money_button{
-        border-radius: 20px;
-        background: rgba(35, 35, 35, 0.80);
-        box-shadow: 0px 0px 55px 0px rgba(0, 0, 0, 0.50);
-        backdrop-filter: blur(5px);
-        padding: 18px 17px;
-        a{
-            font-family: 'Commodus-reg';
-            color: #FFF;
-            text-align: center;
-            text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.40);
-            font-size: 35px;
-            font-style: normal;
-            padding: 31px 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: 400;
-            line-height: normal;
-            border-radius: 20px;
-            background: linear-gradient(180deg, #F4DC7A 0%, rgba(244, 220, 122, 0.00) 100%);
-            box-shadow: 0px 0px 55px 0px rgba(0, 0, 0, 0.50);
-            backdrop-filter: blur(5px);
         }
     }
 }

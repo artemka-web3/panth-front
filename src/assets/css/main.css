@@ -11,7 +11,6 @@ h4,
 h5,
 h6,
 p,
-a,
 blockquote,
 pre,
 abbr,
@@ -120,24 +119,11 @@ q:after {
 a {
   margin: 0;
   padding: 0;
-  color: #313131;
   font-size: 100%;
   vertical-align: baseline;
   background: transparent;
   text-decoration: none;
   display: inline-block;
-}
-
-input {
-  background: transparent;
-  border-color: transparent;
-  border: none;
-  outline: none;
-}
-
-input {
-  max-width: 270px; /* You can adjust this width as needed */
-  padding: 10px; /* Add some padding to make it look better */
 }
 
 /* change colours to suit your needs */
@@ -185,6 +171,18 @@ select {
   vertical-align: middle;
 }
 
+input {
+  background: transparent;
+  border-color: transparent;
+  border: none;
+  outline: none;
+}
+
+input {
+  max-width: 270px; /* You can adjust this width as needed */
+  padding: 10px; /* Add some padding to make it look better */
+}
+
 html::-webkit-scrollbar {
   background-color: #000;
   width: 5px;
@@ -223,6 +221,7 @@ body {
 }
 
 .dashboard {
+  margin: 0;
   background-image: url(../images/main_bg.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -294,7 +293,7 @@ body {
 }
 .dashboard .dashboard_detail .reedem_title {
   color: #000;
-  font-size: 28.263px;
+  font-size: 28px;
   font-style: normal;
   font-weight: 400;
   opacity: 0.5;
@@ -302,14 +301,7 @@ body {
 }
 .dashboard .dashboard_detail .reedem_title.active {
   opacity: 1;
-  color: #000;
 }
-
-
-.active_header{
-  color: #000;
-}
-
 .dashboard .hero_block {
   margin-left: 20px;
   border-radius: 20px;
@@ -336,14 +328,14 @@ body {
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
   padding: 43px 25px 45px 25px;
-  height: 205px;
+  height: 150px;
 }
 .dashboard .detail_title {
   background: linear-gradient(89deg, #C5A059 0.32%, #DEB750 28.88%, #E6D48A 51.72%, #F6DD75 76.64%, #C1A05D 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 35px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: 98.9%;
@@ -354,7 +346,7 @@ body {
 .dashboard .detail_title .small {
   display: block;
   text-align: center;
-  font-size: 22px;
+  font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: 105%;
@@ -395,7 +387,7 @@ body {
   align-items: center;
   gap: 33px;
 }
-.dashboard .footer_text p{
+.dashboard .footer_text p {
   color: #FFF;
   font-size: 19px;
   font-style: normal;
@@ -410,8 +402,6 @@ body {
   font-weight: 400;
   line-height: normal;
 }
-
-
 .dashboard .footer_social {
   display: flex;
   align-items: center;
@@ -423,6 +413,164 @@ body {
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
+}
+
+.money_item {
+  width: 48%;
+  flex: 0 0 auto;
+  border-radius: 20px;
+  background: linear-gradient(107deg, rgba(0, 0, 0, 0.1) 0%, rgba(29, 29, 29, 0.1) 18.75%, rgba(128, 128, 128, 0.1) 81.25%, rgba(255, 255, 255, 0.1) 100%);
+  box-shadow: 0px 0px 55px 0px rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+
+.money_top {
+  padding: 24px 0 10px 0;
+  text-align: center;
+  margin-bottom: 30px;
+  border-radius: 20px;
+  background: linear-gradient(107deg, rgba(0, 0, 0, 0.1) 0%, rgba(29, 29, 29, 0.1) 18.75%, rgba(128, 128, 128, 0.1) 81.25%, rgba(255, 255, 255, 0.1) 100%);
+  box-shadow: 0px 0px 55px 0px rgba(0, 0, 0, 0.5);
+}
+.money_top .money_name {
+  font-family: "Commodus-alt";
+  text-align: center;
+  text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 98.9%; /* 84.065px */
+  background: linear-gradient(89deg, #C5A059 0.32%, #DEB750 28.88%, #E6D48A 51.72%, #F6DD75 76.64%, #C1A05D 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.money_wrapper {
+  border-radius: 20px;
+  background: linear-gradient(107deg, rgba(0, 0, 0, 0.01) 0%, rgba(29, 29, 29, 0.01) 18.75%, rgba(128, 128, 128, 0.01) 81.25%, rgba(255, 255, 255, 0.01) 100%);
+  box-shadow: 0px 0px 55px 0px rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  padding: 11px 32px;
+  margin-bottom: 20px;
+}
+
+.money_body {
+  border-radius: 20px;
+  background: rgba(35, 35, 35, 0.9);
+  box-shadow: 0px 0px 55px 0px rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  padding: 20px;
+  position: relative;
+}
+
+.top_deposit {
+  color: #FFF;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  font-family: "Commodus-reg";
+}
+
+.top_money_types {
+  border-radius: 20px;
+  background: linear-gradient(289deg, rgba(0, 0, 0, 0.05) -100%, rgba(29, 29, 29, 0.05) -62.5%, rgba(128, 128, 128, 0.05) 62.5%, rgba(255, 255, 255, 0.05) 100%);
+  box-shadow: 0px 0px 55px 0px rgba(0, 0, 0, 0.5);
+  padding: 0px 15px 0px 3px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 190px;
+  position: absolute;
+  z-index: 3;
+  height: 36px;
+}
+.top_money_types.top {
+  right: 20px;
+  top: 20px;
+}
+.top_money_types.bottom {
+  right: 20px;
+  bottom: 20px;
+}
+.top_money_types .money_icon img {
+  margin-top: 5px;
+}
+
+.money_body_top {
+  margin-bottom: 45px;
+}
+
+.money_icon_name {
+  color: #FFF;
+  text-align: center;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  font-family: "Commodus-reg";
+}
+
+.money_count {
+  color: #FFF;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.bottom_arrow {
+  margin: 5px 0 1px 0;
+  text-align: center;
+}
+.bottom_arrow img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.money_button {
+  border-radius: 20px;
+  background: rgba(35, 35, 35, 0.8);
+  box-shadow: 0px 0px 55px 0px rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  padding: 18px 17px;
+}
+.money_button a {
+  font-family: "Commodus-reg";
+  color: #FFF;
+  text-align: center;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+  font-size: 24px;
+  font-style: normal;
+  padding: 31px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 400;
+  line-height: normal;
+  border-radius: 20px;
+  background: linear-gradient(180deg, #F4DC7A 0%, rgba(244, 220, 122, 0) 100%);
+  box-shadow: 0px 0px 55px 0px rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+
+.money_block {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
 }
 
 #mint_section .main_right#mint .money_block {
@@ -438,146 +586,6 @@ body {
   justify-content: space-between;
   flex-wrap: wrap;
   margin-bottom: 20px;
-}
-#mint_section .main_right#mint .money_item {
-  width: 44.4%;
-  flex: 0 0 auto;
-  border-radius: 20px;
-  background: linear-gradient(107deg, rgba(0, 0, 0, 0.1) 0%, rgba(29, 29, 29, 0.1) 18.75%, rgba(128, 128, 128, 0.1) 81.25%, rgba(255, 255, 255, 0.1) 100%);
-  box-shadow: 0px 0px 55px 0px rgba(0, 0, 0, 0.5);
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
-}
-#mint_section .main_right#mint .money_top {
-  padding: 45px 0 22px 0;
-  text-align: center;
-  margin-bottom: 30px;
-  border-radius: 20px;
-  background: linear-gradient(107deg, rgba(0, 0, 0, 0.1) 0%, rgba(29, 29, 29, 0.1) 18.75%, rgba(128, 128, 128, 0.1) 81.25%, rgba(255, 255, 255, 0.1) 100%);
-  box-shadow: 0px 0px 55px 0px rgba(0, 0, 0, 0.5);
-}
-#mint_section .main_right#mint .money_top .money_name {
-  font-family: "Commodus-alt";
-  text-align: center;
-  text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
-  font-size: 85px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 98.9%; /* 84.065px */
-  background: linear-gradient(89deg, #C5A059 0.32%, #DEB750 28.88%, #E6D48A 51.72%, #F6DD75 76.64%, #C1A05D 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-#mint_section .main_right#mint .money_wrapper {
-  border-radius: 20px;
-  background: linear-gradient(107deg, rgba(0, 0, 0, 0.01) 0%, rgba(29, 29, 29, 0.01) 18.75%, rgba(128, 128, 128, 0.01) 81.25%, rgba(255, 255, 255, 0.01) 100%);
-  box-shadow: 0px 0px 55px 0px rgba(0, 0, 0, 0.5);
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
-  padding: 11px 32px;
-  margin-bottom: 20px;
-}
-#mint_section .main_right#mint .money_body {
-  border-radius: 20px;
-  background: rgba(35, 35, 35, 0.9);
-  box-shadow: 0px 0px 55px 0px rgba(0, 0, 0, 0.5);
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
-  padding: 20px;
-  position: relative;
-}
-#mint_section .main_right#mint .top_deposit {
-  color: #FFF;
-  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
-  font-size: 13px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  font-family: "Commodus-reg";
-}
-#mint_section .main_right#mint .top_money_types {
-  border-radius: 20px;
-  background: linear-gradient(289deg, rgba(0, 0, 0, 0.05) -100%, rgba(29, 29, 29, 0.05) -62.5%, rgba(128, 128, 128, 0.05) 62.5%, rgba(255, 255, 255, 0.05) 100%);
-  box-shadow: 0px 0px 55px 0px rgba(0, 0, 0, 0.5);
-  padding: 0px 15px 0px 3px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 190px;
-  position: absolute;
-  z-index: 3;
-  height: 36px;
-}
-#mint_section .main_right#mint .top_money_types.top {
-  right: 20px;
-  top: 20px;
-}
-#mint_section .main_right#mint .top_money_types.bottom {
-  right: 20px;
-  bottom: 20px;
-}
-#mint_section .main_right#mint .top_money_types .money_icon img {
-  margin-top: 5px;
-}
-#mint_section .main_right#mint .money_body_top {
-  margin-bottom: 45px;
-}
-#mint_section .main_right#mint .money_icon_name {
-  color: #FFF;
-  text-align: center;
-  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
-  font-size: 13px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  font-family: "Commodus-reg";
-}
-#mint_section .main_right#mint .money_count {
-  color: #FFF;
-  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
-  font-size: 87px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  max-width: 275px;
-}
-#mint_section .main_right#mint .bottom_arrow {
-  margin: 5px 0 1px 0;
-  text-align: center;
-}
-#mint_section .main_right#mint .bottom_arrow img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
-}
-#mint_section .money_button {
-  border-radius: 20px;
-  background: rgba(35, 35, 35, 0.8);
-  box-shadow: 0px 0px 55px 0px rgba(0, 0, 0, 0.5);
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
-  padding: 18px 17px;
-}
-#mint_section .money_button a {
-  font-family: "Commodus-reg";
-  color: #FFF;
-  text-align: center;
-  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
-  font-size: 35px;
-  font-style: normal;
-  padding: 31px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: 400;
-  line-height: normal;
-  border-radius: 20px;
-  background: linear-gradient(180deg, #F4DC7A 0%, rgba(244, 220, 122, 0) 100%);
-  box-shadow: 0px 0px 55px 0px rgba(0, 0, 0, 0.5);
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
 }
 
 .container {
@@ -600,7 +608,7 @@ body {
     padding: 43px 0px 45px 0px;
   }
   .dashboard .detail_title {
-    font-size: 32px;
+    font-size: 24px;
   }
   .dashboard .item_number {
     font-size: 28px;
@@ -677,21 +685,46 @@ body {
     padding: 50px 25px 25px 25px;
   }
   .dashboard .detail_block {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .money_item {
+    width: 100%;
+  }
+  .money_block {
+    justify-content: center;
+  }
+  .dashboard .detail_block {
     gap: 20px;
   }
   #mint_section .main_right#mint .money_top .money_name {
     font-size: 58px;
   }
+  .money_top .money_name {
+    font-size: 58px;
+  }
   #mint_section .money_button a {
+    font-size: 23px;
+  }
+  .money_button a {
     font-size: 23px;
   }
   #mint_section .main_right#mint .top_money_types {
     position: static;
   }
+  .top_money_types {
+    position: static;
+  }
   #mint_section .main_right#mint .money_body_top {
     margin-bottom: 15px;
   }
+  .money_body_top {
+    margin-bottom: 15px;
+  }
   #mint_section .main_right#mint .top_deposit {
+    margin-bottom: 15px;
+  }
+  .top_deposit {
     margin-bottom: 15px;
   }
   .dashboard .detail_item {

@@ -95,21 +95,46 @@
         padding: 50px 25px 25px 25px;
     }
     .dashboard .detail_block{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .money_item {
+        width: 100%;
+    }
+    .money_block{
+        justify-content: center;
+    }
+    .dashboard .detail_block{
         gap: 20px;
     }
     #mint_section .main_right#mint .money_top .money_name {
         font-size: 58px;
     }
+    .money_top .money_name{
+        font-size: 58px;
+    }
     #mint_section .money_button a {
+        font-size: 23px;
+    }
+    .money_button a {
         font-size: 23px;
     }
     #mint_section .main_right#mint .top_money_types{
         position: static;
     }
+    .top_money_types{
+        position: static;
+    }
     #mint_section .main_right#mint .money_body_top {
         margin-bottom: 15px;
     }
+    .money_body_top {
+        margin-bottom: 15px;
+    }
     #mint_section .main_right#mint .top_deposit {
+        margin-bottom: 15px;
+    }
+    .top_deposit {
         margin-bottom: 15px;
     }
     .dashboard .detail_item {
