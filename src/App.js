@@ -34,8 +34,45 @@ function App() {
   const [youBurnPantheon, setYouBurnPantheon] = useState(0)
   const [youReceiveETH, setYouReceiveETH] = useState(0)
 
+  const [mintPrice, setMintPrice] = useState("0")
+  const [redeemPrice, setRedeemPrice] = useState("0") 
+
+
+
+  const getMintPrice = async()=>{
+   // updateEthers()
+   const newValue = "1";
+   
+   try {
+     const valueInWei = utils.parseEther(newValue); // Convert to Wei
+     const val = await pantheonContract.getMintPantheon(valueInWei);
+     setMintPrice(utils.formatEther(val).slice(0, 8) + "...");
+   } catch (error) {
+     console.error(error);
+   }
+    
+
+  }
+  const getRedeemPrice = async()=>{
+    //updateEthers()
+    const newValue = "1";
+    
+    
+    try {
+      const valueInWei = utils.parseEther(newValue); // Convert to Wei
+      const val = await pantheonContract.getRedeemPantheon(valueInWei);
+      console.log(val);
+      setRedeemPrice(utils.formatEther(val).slice(0, 8) + "..."); // Format as Ether
+    } catch (error) {
+      console.error(error);
+    }
+
+  }
+
 
   const getBalance = async()=>{
+    //updateEthers()
+
     try {
       let balance = await pantheonContract.balanceOf(account);
       balance = utils.formatEther(balance).toString()
@@ -47,6 +84,7 @@ function App() {
     }
   }
   const totalETH = async()=>{
+    //updateEthers()
     try {
       let total_eth = await pantheonContract.totalEth();
       total_eth = utils.formatEther(total_eth).toString()
@@ -111,6 +149,9 @@ function App() {
     connectWallet()
     totalETH()
     getBalance()
+    getMintPrice()
+    getRedeemPrice()
+
   })
 
 
@@ -224,22 +265,25 @@ const redeemFunc = async () => {
 
                                 <div class="detail_item">
                                     <h3 class="detail_title">
-                                        LP APR: <br></br> <span class="small">(Base Swap)</span> 
-                                    </h3>
-                                    <div class="item_bottom">
-                                        <p class="item_number">246.14%</p>
-                                    </div>
-                                </div>
-
-                                <div class="detail_item">
-                                    <h3 class="detail_title">
-                                        TOTAL LP <br></br> <span class="small">Rewards:</span>
+                                        Mint Price <br></br> <span class="small">(PANTHEON per ETH)</span> 
                                     </h3>
                                     <div class="item_bottom">
                                         <div class="item_icon">
                                             <img src={detail_1} alt=""/>
                                         </div>
-                                        <p class="item_number">12,340.332..</p>
+                                        <p class="item_number">{mintPrice}</p>
+                                    </div>
+                                </div>
+
+                                <div class="detail_item">
+                                    <h3 class="detail_title">
+                                      Redeem Price <br></br> <span class="small">(ETH per PANTHEON)</span>
+                                    </h3>
+                                    <div class="item_bottom">
+                                        <div class="item_icon">
+                                            <img src={detail_2} alt=""/>
+                                        </div>
+                                        <p class="item_number">{redeemPrice}</p>
                                     </div>
                                 </div>
                             </div>
