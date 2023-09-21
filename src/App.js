@@ -35,18 +35,24 @@ function App() {
   const [youReceiveETH, setYouReceiveETH] = useState(0)
 
   const [mintPrice, setMintPrice] = useState("0")
-  const [redeemPrice, setRedeemPrice] = useState("0") 
+  const [redeemPrice, setRedeemPrice] = useState("0")
+  const [totalSupply, setTotalSupply] = useState("0")
 
 
 
   const getMintPrice = async()=>{
    // updateEthers()
-   const newValue = "1";
+   const newValue = 1;
+   let total_eth = parseFloat(total_eth_value)
+   let total_supply = parseFloat(totalSupply)
    
+   let result = (newValue * total_eth) / total_supply;
    try {
-     const valueInWei = utils.parseEther(newValue); // Convert to Wei
-     const val = await pantheonContract.getMintPantheon(valueInWei);
-     setMintPrice(utils.formatEther(val).slice(0, 8) + "...");
+    //  const valueInWei = utils.parseEther(newValue); // Convert to Wei
+    //  const val = await pantheonContract.getMintPantheon(valueInWei);
+     setMintPrice(result.toString().slice(0, 8) + "...");
+     console.log(result)
+
    } catch (error) {
      console.error(error);
    }
@@ -69,7 +75,18 @@ function App() {
 
   }
 
+  const getTotalSupply = async()=>{
+    //updateEthers()
 
+    try {
+      let total_supply = await pantheonContract.totalSupply();
+      total_supply = utils.formatEther(total_supply).toString()
+      setTotalSupply(total_supply.slice(0, 8) + "...")
+    } catch (error) {
+      console.error('Error:', error);
+      return 0
+    }
+  }
   const getBalance = async()=>{
     //updateEthers()
 
@@ -148,6 +165,7 @@ function App() {
     }
     connectWallet()
     totalETH()
+    getTotalSupply()
     getBalance()
     getMintPrice()
     getRedeemPrice()
@@ -265,11 +283,11 @@ const redeemFunc = async () => {
 
                                 <div class="detail_item">
                                     <h3 class="detail_title">
-                                        Mint Price <br></br> <span class="small">(PANTHEON per ETH)</span> 
+                                        Mint Price <br></br> <span class="small">(ETH per PANTHEON)</span> 
                                     </h3>
                                     <div class="item_bottom">
                                         <div class="item_icon">
-                                            <img src={detail_1} alt=""/>
+                                            <img src={detail_2} alt=""/>
                                         </div>
                                         <p class="item_number">{mintPrice}</p>
                                     </div>
