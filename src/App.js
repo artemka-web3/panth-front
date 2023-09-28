@@ -42,12 +42,12 @@ function App() {
 
   const getMintPrice = async()=>{
    // updateEthers()
+   try {
    const newValue = 1;
    let total_eth = parseFloat(total_eth_value)
    let total_supply = parseFloat(totalSupply)
    
    let result = (newValue * total_eth) / total_supply;
-   try {
     //  const valueInWei = utils.parseEther(newValue); // Convert to Wei
     //  const val = await pantheonContract.getMintPantheon(valueInWei);
      setMintPrice(result.toString().slice(0, 8) + "...");
@@ -140,14 +140,18 @@ function App() {
 		updateEthers();
 	}
 	const updateEthers = () => {
-		let tempProvider = new providers.Web3Provider(window.ethereum);
-		setProvider(tempProvider);
+    try{
+      let tempProvider = new providers.Web3Provider(window.ethereum);
+      setProvider(tempProvider);
 
-		let tempSigner = tempProvider.getSigner();
-		setSigner(tempSigner);
+      let tempSigner = tempProvider.getSigner();
+      setSigner(tempSigner);
 
-		let tempContract = new Contract(pantheonContractAddress, pantheonContractAbi, tempSigner);
-		setPantheonContract(tempContract);	
+      let tempContract = new Contract(pantheonContractAddress, pantheonContractAbi, tempSigner);
+      setPantheonContract(tempContract);	
+    } catch(err){
+      console.log(err)
+    }
 	}
 	const chainChangedHandler = () => {
 		// reload the page to avoid any errors with chain change mid use of application
