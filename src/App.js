@@ -18,7 +18,7 @@ import { Contract, providers, utils, Signer } from "ethers";
 
 function App() {
 
-  let pantheonContractAddress = "0x16C05396339Ff0e796eb274A2C572dF2e00A8a35"
+  let pantheonContractAddress = "0x65a879bEF5E95a7514752B958b997Fc834b6b4e1"
   const [provider, setProvider] = useState(null)
   const [signer, setSigner] = useState(null);
   const [pantheonContract, setPantheonContract] = useState(null)
