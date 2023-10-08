@@ -188,7 +188,7 @@ html::-webkit-scrollbar {
   width: 5px;
 }
 html::-webkit-scrollbar-thumb {
-  background-color: #DA1A00;
+  background-color: #C5A059;
   width: 3px;
 }
 
@@ -287,6 +287,31 @@ body {
   line-height: normal;
   margin-bottom: 18px;
 }
+
+.dashboard .ethereum_info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 10px; /* Add margin to create space between the two sections */
+}
+
+.dashboard .ethereum_info .item_icon img {
+  /* Adjust styles for the Ethereum logo as needed */
+  width: 20px;
+  height: 20px;
+}
+
+.dashboard .ethereum_info .item_number {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #FFF;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
 .dashboard .dashboard_detail .dash_title.no_active {
   opacity: 0.5;
   font-family: "Commodus";
@@ -328,7 +353,7 @@ body {
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
   padding: 43px 25px 45px 25px;
-  height: 150px;
+  height: 200px;
 }
 .dashboard .detail_title {
   background: linear-gradient(89deg, #C5A059 0.32%, #DEB750 28.88%, #E6D48A 51.72%, #F6DD75 76.64%, #C1A05D 100%);
@@ -337,12 +362,17 @@ body {
   -webkit-text-fill-color: transparent;
   font-size: 16px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: bolder;
   line-height: 98.9%;
   text-align: center;
   margin-bottom: 10px;
-  font-family: "Commodus-reg";
+  font-family: "Arial";
+  
+  /* Add text outline */
+  -webkit-text-stroke: 0.5px black; /* You can adjust the width (1px) as needed */
+  text-shadow: 0.5px black;
 }
+
 .dashboard .detail_title .small {
   display: block;
   text-align: center;
@@ -358,9 +388,10 @@ body {
   justify-content: center;
 }
 .dashboard .item_number {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: #FFF;
   text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
-  font-size: 33px;
+  font-size: 24px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -395,7 +426,7 @@ body {
   line-height: normal;
 }
 .dashboard .footer_name {
-  color: #FFF;
+  color: #929292;
   font-family: Arial, sans-serif;
   font-size: 18px;
   font-style: normal;
@@ -413,6 +444,14 @@ body {
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
+}
+
+.additional_text {
+  /* Здесь вы можете устанавливать стили, такие как цвет текста, размер шрифта, отступы и т. д. */
+  color: #333; /* Пример: установка цвета текста на тёмно-серый */
+  font-size: 16px; /* Пример: установка размера шрифта */
+  margin-top: 10px; /* Пример: установка отступа сверху */
+  /* Другие стили, которые вы хотите применить */
 }
 
 .money_item {
@@ -434,12 +473,12 @@ body {
   box-shadow: 0px 0px 55px 0px rgba(0, 0, 0, 0.5);
 }
 .money_top .money_name {
-  font-family: "Commodus-alt";
+  font-family: "arial";
   text-align: center;
   text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
-  font-size: 24px;
+  font-size: 26px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: bold;
   line-height: 98.9%; /* 84.065px */
   background: linear-gradient(89deg, #C5A059 0.32%, #DEB750 28.88%, #E6D48A 51.72%, #F6DD75 76.64%, #C1A05D 100%);
   background-clip: text;
@@ -472,9 +511,9 @@ body {
   text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
   font-size: 13px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: bolder;
   line-height: normal;
-  font-family: "Commodus-reg";
+  font-family: "arial";
 }
 
 .top_money_types {
@@ -510,11 +549,11 @@ body {
   color: #FFF;
   text-align: center;
   text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
-  font-size: 13px;
+  font-size: 16px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: bolder;
   line-height: normal;
-  font-family: "Commodus-reg";
+  font-family: "sans-serif";
 }
 
 .money_count {
@@ -548,7 +587,7 @@ body {
   
 }
 .money_button a {
-  font-family: "Commodus-reg";
+  font-family: "Arial";
   color: #FFF;
   text-align: center;
   text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
@@ -558,7 +597,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-weight: 400;
+  font-weight: bolder;
   line-height: normal;
   border-radius: 20px;
   background: linear-gradient(180deg, #F4DC7A 0%, rgba(244, 220, 122, 0) 100%);
@@ -614,7 +653,7 @@ body {
     font-size: 24px;
   }
   .dashboard .item_number {
-    font-size: 28px;
+    font-size: 22px;
   }
   .dashboard .main_left_top {
     margin-bottom: 75px;
@@ -640,7 +679,7 @@ body {
     gap: 0;
   }
   .dashboard .item_number {
-    font-size: 27px;
+    font-size: 24px;
   }
   .dashboard .main_left_top {
     padding: 55px 0px 0 0px;
@@ -798,3 +837,4 @@ body {
     gap: 20px;
   }
 }/*# sourceMappingURL=main.css.map */
+
