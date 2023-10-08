@@ -296,7 +296,7 @@ function App() {
                       
                     </div>
                     <div className="item_bottom">
-                      <p className="item_number">$ {(parseFloat(ethPrice) * parseFloat(mintPrice)).toString().slice(0, 8)}</p>
+                      <p className="item_number">$ {(ethPrice * mintPrice).toString().slice(0, 8)}</p>
                           
                     </div>
 
