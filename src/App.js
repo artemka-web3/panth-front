@@ -42,7 +42,7 @@ function App() {
   
     const result = (newValue * total_eth) / total_supply * 1.10; // Adding 10%
     try {
-      setMintPrice(result.toFixed(8)); // Limit to 8 decimal places
+      setMintPrice(result.toString().slice(0,8) + '...'); // Limit to 8 decimal places
     } catch (error) {
       console.error(error);
     }
@@ -296,7 +296,7 @@ function App() {
                       
                     </div>
                     <div className="item_bottom">
-                      <p className="item_number">$ {(ethPrice * mintPrice).toString().slice(0, 8)}</p>
+                      <p className="item_number">$ {(parseFloat(ethPrice) * parseFloat(mintPrice)).toString().slice(0, 8)}</p>
                           
                     </div>
 
