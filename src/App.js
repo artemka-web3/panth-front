@@ -35,17 +35,27 @@ function App() {
   const [redeemPrice, setRedeemPrice] = useState('0'); // Initialize as a string
   const [totalSupply, setTotalSupply] = useState('0'); // Initialize as a string
 
-  const calculateMintPrice = async () => {
-    const newValue = '1';
-    const total_eth = parseFloat(total_eth_value);
-    const total_supply = parseFloat(totalSupply);
-  
-    const result = (newValue * total_eth) / total_supply * 1.10; // Adding 10%
-    try {
-      setMintPrice(result.toString().slice(0, 8) + '...'); // Limit to 8 decimal places
-    } catch (error) {
-      console.error(error);
+  const calculateMintPrice = () => {
+    try{
+      let newValue = 1;
+      let total_eth = parseInt(total_eth_value);
+      let total_supply = parseInt(totalSupply);
+      let result = (newValue * total_eth) / total_supply * 1.10;
+      setMintPrice(result.toString().slice(0,8))
+    } catch(err){
+      console.log(err + 'miNT PRICE error')
     }
+
+
+    // const total_eth = parseFloat(total_eth_value);
+    // const total_supply = parseFloat(totalSupply);
+  
+    // try {
+    //   const result = (newValue * total_eth) / total_supply * 1.10; // Adding 10%
+    //   setMintPrice(result.toString().slice(0, 8)+"..."); // Limit to 8 decimal places
+    // } catch (error) {
+    //   console.error(error);
+    // }
   };
   
 
@@ -59,6 +69,16 @@ function App() {
     } catch (error) {
       console.error(error);
     }
+
+    try{
+      let total_eth = parseInt(total_eth_value);
+      let total_supply = parseInt(totalSupply);
+      let result = (newValue * total_eth) / total_supply * 1.10;
+      setMintPrice(result.toString().slice(0,8))
+    } catch(err){
+      console.log(err + 'miNT PRICE error')
+    }
+    
   };
 
   const getTotalSupply = async () => {
@@ -112,12 +132,11 @@ function App() {
         setConnected(true);
         setSigner(signer);
         setConnBtnText('Connected');
+        totalETH()
+        getBalance()
+        getTotalSupply()
         // Call totalETH and calculateMintPrice after connecting
-        totalETH();
-        getTotalSupply();
-        getBalance();
-        calculateMintPrice();
-        calculateRedeemPrice(); // Calculate redeem price when connecting
+
       } else {
         console.error('No web3 provider found');
       }
@@ -155,31 +174,34 @@ function App() {
     window.location.reload();
     updateEthers();
   };
+  const fetchEthereumPrice = async () => {
+    try {
+      const response = await axios.get(
+        'https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd'
+      );
 
+      // Extract the Ethereum price from the response data
+      const price = response.data.ethereum.usd;
+
+      // Update the state with the Ethereum price
+      setEthPrice(price);
+    } catch (error) {
+      console.error('Error fetching Ethereum price:', error);
+    }
+  };
   useEffect(() => {
-    const fetchEthereumPrice = async () => {
-      try {
-        const response = await axios.get(
-          'https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd'
-        );
 
-        // Extract the Ethereum price from the response data
-        const price = response.data.ethereum.usd;
-
-        // Update the state with the Ethereum price
-        setEthPrice(price);
-      } catch (error) {
-        console.error('Error fetching Ethereum price:', error);
-      }
-    };
-    fetchEthereumPrice();
     if (connected) {
       setConnBtnText('Connected');
     }
     connectWallet();
     getTotalSupply();
     getBalance();
-  }, [connected]);
+    calculateRedeemPrice()
+    fetchEthereumPrice()
+    console.log(mintPrice)
+
+  }, [connected, mintPrice, redeemPrice, pantheonBalance, totalSupply, ethPrice]);
 
   const depositHandlerETH = async (event) => {
     const newValue = event.target.value;
@@ -292,11 +314,13 @@ function App() {
                       <div className="item_icon">
                         <img src={detail_2} alt="" />
                       </div>
-                      <p className="item_number">{mintPrice}</p>
+                      <p className="item_number">{mintPrice}...</p>
                       
                     </div>
                     <div className="item_bottom">
                       <p className="item_number">$ {(parseFloat(ethPrice) * parseFloat(mintPrice)).toString().slice(0, 8)}</p>
+                      {/* <p className="item_number">$ 0</p> */}
+
                           
                     </div>
 
